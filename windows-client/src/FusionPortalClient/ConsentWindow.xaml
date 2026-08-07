@@ -1,0 +1,43 @@
+<Window x:Class="FusionPortalClient.ConsentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FusionPortal Client - Data Notice"
+        Width="480" Height="480"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Before you continue" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top">
+            This app is installed to let you check in to your scheduled matches
+            and to help your organization verify a fair match environment.
+            While a match session is open, it reports the following to
+            FusionPortal:
+            <LineBreak /><LineBreak />
+            • This device's name and whether it's joined to a school/org domain
+            <LineBreak />
+            • Local and public IP address
+            <LineBreak />
+            • Whether a VPN or tunneling client appears to be running
+            <LineBreak />
+            • The game it detects you're playing
+            <LineBreak />
+            • Names and window titles of other visibly-running programs
+            <LineBreak /><LineBreak />
+            It does not report your screen contents, keystrokes, files, or
+            browsing history, and it does not run outside of an open match
+            check-in window. A tray icon is always visible while it's active.
+        </TextBlock>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button Content="Decline and Exit" Width="120" Margin="0,0,10,0" Click="Decline_Click" />
+            <Button Content="I Understand &amp; Agree" Width="160" Click="Agree_Click" IsDefault="True" />
+        </StackPanel>
+    </Grid>
+</Window>
